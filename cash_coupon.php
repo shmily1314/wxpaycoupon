@@ -62,16 +62,16 @@ class Cash_Coupon
         if ($transaction_id) {
             $orderQuery->setParameter("transaction_id", "$transaction_id");//微信订单号
         }
-        if ($params["config"]["paymentAccount"]["sub_appid"] && $params["config"]["paymentAccount"]["sub_mch_id"]) {
+        if ($params["paymentAccount"]["sub_appid"] && $params["paymentAccount"]["sub_mch_id"]) {
             //服务商信息
-            $orderQuery->setParameter("sub_mch_id", $params["config"]["paymentAccount"]["sub_mch_id"]);//子商户号
-            $orderQuery->setParameter("sub_appid", $params["config"]["paymentAccount"]["sub_appid"]);//子商户appid
+            $orderQuery->setParameter("sub_mch_id", $params["paymentAccount"]["sub_mch_id"]);//子商户号
+            $orderQuery->setParameter("sub_appid", $params["paymentAccount"]["sub_appid"]);//子商户appid
         }
         $orderQueryResult = $orderQuery->getResult();
         if ($orderQueryResult["return_code"] == "FAIL") {
-            throw new YwkPay_Exception("通信出错：" . $orderQueryResult['return_msg'], 9001);
+            throw new Exception("通信出错：" . $orderQueryResult['return_msg'], 9001);
         } elseif ($orderQueryResult["result_code"] == "FAIL") {
-            throw new YwkPay_Exception("错误代码：" . $orderQueryResult['err_code'] . ",错误代码描述："
+            throw new Exception("错误代码：" . $orderQueryResult['err_code'] . ",错误代码描述："
                 . $orderQueryResult['err_code_des'], 9001);
         } else {
             return $orderQueryResult;
