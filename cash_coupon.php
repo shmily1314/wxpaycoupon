@@ -160,7 +160,7 @@ class Cash_Coupon
 
 //普通商户升级---开始获取沙箱key
 //为普通商户的微信支付秘钥
-//$params["paymentAccount"]['key'] = ''; //正式秘钥获取沙箱秘钥，用于调用后续沙箱环境签名时的key获取
+$params["paymentAccount"]['key'] = ''; //正式秘钥获取沙箱秘钥，用于调用后续沙箱环境签名时的key获取
 $params["paymentAccount"]['mch_id']     = ''; //商户号(如果是服务商，则填写服务商商户号，否则填写普通商户号)
 $params["paymentAccount"]['sub_mch_id'] = ''; //子商户号
 $params["paymentAccount"]['appid']      = ''; //appid
