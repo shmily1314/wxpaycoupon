@@ -46,7 +46,7 @@ class Cash_Coupon
     /**
      * 订单查询接口
      * @param array $params 参数数组
-     * @throws YwkPay_Exception
+     * @throws Exception
      * @return array $orderQueryResult
      */
     public static function queryOrder(array $params)
