@@ -1,6 +1,4 @@
 # wxpaycoupon
-
-# wxpaycoupon
 升级微信支付免充代金券
  * 完成以下四步即可完成升级
  * 接口文档描述: https://pay.weixin.qq.com/wiki/doc/api/download/mczyscsyl.pdf
